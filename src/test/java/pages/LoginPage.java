@@ -34,4 +34,11 @@ public class LoginPage {
     public void clicarBtnEntrar() {
         metodo.clicar(btnEntrarLogin);
     }
+
+    public void inserirCredenciais(String email, String senha) {
+        metodo.clicar(btnAcesseAqui);
+        metodo.digitar(campoEmail, email);
+        metodo.digitar(campoSenha, senha);
+        metodo.clicar(btnEntrarLogin);
+    }
 }
