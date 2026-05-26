@@ -13,6 +13,7 @@ public class LoginPage {
     public By campoEmail = By.id("login-email");
     public By campoSenha = By.id("login-password");
     public By btnEntrarLogin = By.id("login-button");
+    public By linkBtnCadastro = By.id("go-register-button");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -40,5 +41,9 @@ public class LoginPage {
         metodo.digitar(campoEmail, email);
         metodo.digitar(campoSenha, senha);
         metodo.clicar(btnEntrarLogin);
+    }
+
+    public void clicarLinkBtnCadastro() {
+        metodo.clicar(linkBtnCadastro);
     }
 }

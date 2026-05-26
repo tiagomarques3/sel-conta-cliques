@@ -107,4 +107,21 @@ public class LoginSteps {
         String validarErroDados = driver.findElement(By.id("toast")).getText();
         assertEquals(validarErroDados, "E-mail ou senha incorretos");
     }
+
+    @And("estiver na tela de login")
+    public void estiverNaTelaDeLogin() {
+        String validarErroDados = driver.findElement(By.id("login-title")).getText();
+        assertEquals(validarErroDados, "ACESSE AQUI");
+    }
+
+    @And("clicar em Nao Cadastrou")
+    public void clicarEmNaoCadastrou() {
+        logPage.clicarLinkBtnCadastro();
+    }
+
+    @Then("deve redirecionar para a tela de cadastro")
+    public void deveRedirecionarParaATelaDeCadastro() {
+        String validarTelaCadastro = driver.findElement(By.id("register-title")).getText();
+        assertEquals(validarTelaCadastro, "CADASTRE-SE AQUI");
+    }
 }
